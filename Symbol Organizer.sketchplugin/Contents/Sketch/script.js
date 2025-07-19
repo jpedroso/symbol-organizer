@@ -308,7 +308,9 @@ var organize = function(context,type) {
 		// If user wants to zoom out...
 		if (layoutSettings.zoomOut == 1) {
 			// Adjust view
-			if (sketch.version.sketch > 64) {
+			if (sketch.version.sketch > 2025) {
+				context.document.canvasView().centerLayersInCanvas();	
+			} else if (sketch.version.sketch > 64) {
 				context.document.canvasView().zoomToFitRect(page.contentBounds());
 			} else {
 				context.document.contentDrawView().zoomToFitRect(page.contentBounds());
