@@ -49,7 +49,7 @@ function createTextStyle(styleData) {
 	textStyle.setLineHeight(styleData.lineHeight);
 	textStyle.setTextAlignment(styleData.textAlignment);
 	textStyle.setFontPostscriptName(styleData.fontFace);
-	textStyle.setTextColor(MSImmutableColor.colorWithSVGString("#" + styleData.fontColor));
+	textStyle.setTextColor(MSColor.colorWithHex_alpha("#" + styleData.fontColor, 1))
 
 	return textStyle;
 }
