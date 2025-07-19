@@ -329,7 +329,7 @@ var remove = function(context) {
 		count = 0;
 
 	var predicate = NSPredicate.predicateWithFormat("className == %@ && isSafeToDelete == 1","MSSymbolMaster"),
-		symbols = context.document.currentPage().children().filteredArrayUsingPredicate(predicate);
+		symbols = context.document.currentPage().layers().filteredArrayUsingPredicate(predicate);
 
 	symbols.forEach(function(symbol){
 		if (exemptSymbols.indexOf(String(symbol.symbolID())) == -1) removeSymbols.push(symbol);
