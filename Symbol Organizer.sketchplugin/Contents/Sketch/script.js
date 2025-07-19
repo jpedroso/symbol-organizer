@@ -297,7 +297,9 @@ var organize = function(context,type) {
 			page.addLayers([titleGroup]);
 
 			// Resize title group
-			if (sketch.version.sketch > 52) {
+			if (sketch.version.sketch > 2025) {
+				titleGroup.resizeToFitChildren();
+			} else if (sketch.version.sketch > 52) {
 				titleGroup.fixGeometryWithOptions(0);
 			} else {
 				titleGroup.resizeToFitChildrenWithOption(0);
