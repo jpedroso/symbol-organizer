@@ -93,7 +93,12 @@ var organize = function(context,type) {
 		var groupLayout = createGroupObject(symbols,layoutSettings.groupDepth);
 
 		// Reset page origin
-		page.setRulerBase(CGPointMake(0,0));
+		var hRulerData = page.horizontalRulerData() || MSRulerData.new();    
+		var vRulerData = page.verticalRulerData() || MSRulerData.new();
+		hRulerData.setBase(0);
+		page.setHorizontalRulerData(hRulerData);
+		vRulerData.setBase(0);
+		page.setVerticalRulerData(vRulerData);
 
 		// If user wants to display group titles...
 		if (layoutSettings.displayTitles == 1) {
