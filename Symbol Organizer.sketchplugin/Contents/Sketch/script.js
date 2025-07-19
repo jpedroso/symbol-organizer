@@ -164,7 +164,6 @@ var organize = function(context,type) {
 			titleGroup.frame().setX((layoutSettings.sortDirection == 0) ? 0 : -xPad);
 			titleGroup.frame().setY((layoutSettings.sortDirection == 0) ? -(offsetHeight+yPad) : 0);
 			titleGroup.setIsLocked(true);
-			titleGroup.setHasClickThrough(true);
 		}
 
 		// Set tracker/counters
