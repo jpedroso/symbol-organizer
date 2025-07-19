@@ -194,8 +194,11 @@ var organize = function(context,type) {
 
 				// Create screen title
 				var screenTitle = MSTextLayer.new();
+				screenTitle.setHorizontalSizing(1);
+				screenTitle.setVerticalSizing(1);
 				screenTitle.setStringValue(groupLayout[i]["prefix"]);
 				screenTitle.setName(groupLayout[i]["prefix"]);
+				screenTitle.adjustFrameToFit();
 
 				if (titleTextAlign == 0) {
 					screenTitle.frame().setY(titleTextY);
