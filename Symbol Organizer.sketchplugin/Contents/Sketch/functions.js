@@ -328,7 +328,7 @@ function getExemptSymbols() {
 
 	while (page = pageLoop.nextObject()) {
 		var predicate = NSPredicate.predicateWithFormat("className == %@ && overrides != nil","MSSymbolInstance"),
-			instancesWithOverrides = page.layers().filteredArrayUsingPredicate(predicate),
+			instancesWithOverrides = page.childrenIncludingSelf(true).filteredArrayUsingPredicate(predicate),
 			loop = instancesWithOverrides.objectEnumerator(),
 			instance;
 
